@@ -1,9 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="C:/Essentials/git-projects/selenium_4/src/test/java/selenium4_tests/SlowNetworkTests.java">
+    <test verbose="2" preserve-order="true" name="selenium_4_tests">
         <classes>
+            <class name="selenium4_tests.MultipleBrowserWindows">
+                <methods>
+                    <include name="test_open_new_tab"/>
+                    <include name="test_open_new_window"/>
+                </methods>
+            </class>
+            <class name="selenium4_tests.PageScreenshot">
+                <methods>
+                    <include name="takeFullPageScreenshot"/>
+                    <include name="takePageScreenshot"/>
+                    <include name="takeElementScreenshot"/>
+                </methods>
+            </class>
+            <class name="selenium4_tests.RelativeLocators">
+                <methods>
+                    <include name="testRelativeLocator_Below"/>
+                    <include name="testMultipleRelativeLocators_AboveToRightOf"/>
+                    <include name="testRelativeLocator_FindListOfWebElements"/>
+                </methods>
+            </class>
             <class name="selenium4_tests.SlowNetworkTests">
                 <methods>
                     <include name="enableSlowNetwork"/>
