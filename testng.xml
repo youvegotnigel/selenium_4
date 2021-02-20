@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Essentials/git-projects/selenium_4/src/test/java/selenium4_tests/SlowNetworkTests.java">
+        <classes>
+            <class name="selenium4_tests.SlowNetworkTests">
+                <methods>
+                    <include name="enableSlowNetwork"/>
+                    <include name="accessLinkedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
