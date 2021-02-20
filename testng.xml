@@ -3,27 +3,27 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="selenium_4_tests">
         <classes>
-            <class name="selenium4_tests.MultipleBrowserWindows">
+            <class name="new_features.MultipleBrowserWindows">
                 <methods>
                     <include name="test_open_new_tab"/>
                     <include name="test_open_new_window"/>
                 </methods>
             </class>
-            <class name="selenium4_tests.PageScreenshot">
+            <class name="new_features.PageScreenshot">
                 <methods>
                     <include name="takeFullPageScreenshot"/>
                     <include name="takePageScreenshot"/>
                     <include name="takeElementScreenshot"/>
                 </methods>
             </class>
-            <class name="selenium4_tests.RelativeLocators">
+            <class name="new_features.RelativeLocators">
                 <methods>
                     <include name="testRelativeLocator_Below"/>
                     <include name="testMultipleRelativeLocators_AboveToRightOf"/>
                     <include name="testRelativeLocator_FindListOfWebElements"/>
                 </methods>
             </class>
-            <class name="selenium4_tests.SlowNetworkTests">
+            <class name="new_features.SlowNetworkTests">
                 <methods>
                     <include name="enableSlowNetwork"/>
                     <include name="accessLinkedIn"/>
