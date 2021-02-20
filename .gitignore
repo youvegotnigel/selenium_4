@@ -4,6 +4,7 @@
 .project
 .classpath
 *.iml
+*.png
 target
 test-output
 resources/test.properties
