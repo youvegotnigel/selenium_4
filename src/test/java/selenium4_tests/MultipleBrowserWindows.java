@@ -89,10 +89,28 @@ public class MultipleBrowserWindows {
 
         SoftAssert softAssert = new SoftAssert();
 
+        driver.get("https://www.google.com");
+        softAssert.assertEquals(driver.getTitle(), "Google");
+
+        // new browser window
+        driver.switchTo().newWindow(WindowType.WINDOW);
+        driver.get("https://www.youtube.com");
+        softAssert.assertEquals(driver.getTitle(), "YouTube");
+
         // new browser window
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.get("https://www.gmail.com");
         softAssert.assertEquals(driver.getTitle(), "Gmail - Email from Google");
+
+        // new browser window
+        driver.switchTo().newWindow(WindowType.WINDOW);
+        driver.get("https://www.facebook.com");
+        softAssert.assertEquals(driver.getTitle(), "Facebook – log in or sign up");
+
+        // new tab in the same browser window
+        driver.switchTo().newWindow(WindowType.TAB);
+        driver.get("https://twitter.com/");
+        softAssert.assertEquals(driver.getTitle(), "Twitter. It’s what’s happening / Twitter");
 
         softAssert.assertAll();
     }
