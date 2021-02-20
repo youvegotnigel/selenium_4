@@ -34,12 +34,12 @@ public class MultipleBrowserWindows {
         driver.switchTo().newWindow(WindowType.TAB);
 
         driver.get("https://www.youtube.com");
-        softAssert.assertEquals(driver.getTitle(), "Youtube");
+        softAssert.assertEquals(driver.getTitle(), "YouTube");
 
         // new browser window
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.get("https://www.gmail.com");
-        softAssert.assertEquals(driver.getTitle(), "Mail");
+        softAssert.assertEquals(driver.getTitle(), "Gmail - Email from Google");
 
 
         softAssert.assertAll();
