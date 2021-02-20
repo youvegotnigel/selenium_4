@@ -3,7 +3,6 @@ package selenium4_tests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -18,7 +17,7 @@ import java.time.Duration;
 
 public class PageScreenshot {
 
-    WebDriver driver;
+    private WebDriver driver;
 
     private By logo = By.id("nav-logo");
 

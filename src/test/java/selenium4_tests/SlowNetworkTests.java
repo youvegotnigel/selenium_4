@@ -13,7 +13,7 @@ import java.util.Optional;
 
 public class SlowNetworkTests {
 
-    ChromeDriver driver;
+    private ChromeDriver driver;
     DevTools devTools;
 
     @BeforeClass
