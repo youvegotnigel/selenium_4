@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="selenium_4_tests">
+    <test verbose="2" name="Selenium-4 Tests">
+        <classes>
+            <class name="new_features.BasicAuthentication">
+                <methods>
+                    <include name="testBasicAuthNewMethod"/>
+                    <include name="testBasicAuthOldMethod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="GeoLocation">
+        <classes>
+            <class name="new_features.GeoLocation">
+                <methods>
+                    <include name="mockGeolocation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="MultipleBrowserWindows">
         <classes>
             <class name="new_features.MultipleBrowserWindows">
                 <methods>
@@ -9,6 +30,11 @@
                     <include name="test_open_new_window"/>
                 </methods>
             </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="PageScreenshot">
+        <classes>
             <class name="new_features.PageScreenshot">
                 <methods>
                     <include name="takeFullPageScreenshot"/>
@@ -16,6 +42,11 @@
                     <include name="takeElementScreenshot"/>
                 </methods>
             </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="RelativeLocators">
+        <classes>
             <class name="new_features.RelativeLocators">
                 <methods>
                     <include name="testRelativeLocator_Below"/>
@@ -23,10 +54,37 @@
                     <include name="testRelativeLocator_FindListOfWebElements"/>
                 </methods>
             </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="SlowNetworkTests">
+        <classes>
             <class name="new_features.SlowNetworkTests">
                 <methods>
                     <include name="enableSlowNetwork"/>
                     <include name="accessLinkedIn"/>
+                    <include name="enableOfflineNetwork"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="UntrustedWebsite">
+        <classes>
+            <class name="new_features.UntrustedWebsite">
+                <methods>
+                    <include name="loadBadWebsite"/>
+                    <include name="doNotLoadBadWebsite"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true"
+          name="ViewConsoleLogs">
+        <classes>
+            <class name="new_features.ViewConsoleLogs">
+                <methods>
+                    <include name="viewConsoleLogs"/>
                 </methods>
             </class>
         </classes>
