@@ -46,11 +46,11 @@ public class SlowNetworkTests {
         System.out.println("Slow " + driver.getTitle());
     }
 
-    @Test
-    public void accessLinkedIn () {
-        driver.get("https://www.linkedin.com");
-        System.out.println("Access " + driver.getTitle());
-    }
+//    @Test
+//    public void accessLinkedIn () {
+//        driver.get("https://www.linkedin.com");
+//        System.out.println("Access " + driver.getTitle());
+//    }
 
     @Test
     public void enableOfflineNetwork () {
