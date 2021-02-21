@@ -2,7 +2,6 @@ package new_features;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -48,6 +47,9 @@ public class GeoLocation {
         coordinates.put("longitude", longitude);
         coordinates.put("accuracy", accuracy);
 
+        /**
+         * CDP = Chrome Debugging Protocol
+         * */
         driver.executeCdpCommand("Emulation.setGeolocationOverride", coordinates);
 
         driver.get("https://where-am-i.org/");
