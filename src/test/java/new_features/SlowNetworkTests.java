@@ -32,16 +32,8 @@ public class SlowNetworkTests {
     @Test
     public void enableSlowNetwork () {
         devTools.createSession();
-        devTools.send(Network.enable(
-                Optional.empty(),
-                Optional.empty(),
-                Optional.empty()));
-        devTools.send(Network.emulateNetworkConditions(
-                false,
-                150,
-                2500,
-                2000,
-                Optional.of(ConnectionType.CELLULAR3G)));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.emulateNetworkConditions(false, 150, 2500,2000,Optional.of(ConnectionType.CELLULAR3G)));
         driver.get("https://www.linkedin.com");
         System.out.println("Slow " + driver.getTitle());
     }
@@ -55,19 +47,9 @@ public class SlowNetworkTests {
     @Test
     public void enableOfflineNetwork () {
         devTools.createSession();
-        devTools.send(Network.enable(
-                Optional.empty(),
-                Optional.empty(),
-                Optional.empty()));
-        devTools.send(Network.emulateNetworkConditions(
-                true,
-                10,
-                100,
-                50,
-                Optional.of(ConnectionType.WIFI)));
-        devTools.addListener(loadingFailed(),
-                loadingFailed -> assertEquals(loadingFailed.getErrorText(),
-                        "net::ERR_INTERNET_DISCONNECTED"));
+        devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
+        devTools.send(Network.emulateNetworkConditions(true, 10, 100, 50, Optional.of(ConnectionType.WIFI)));
+        devTools.addListener(loadingFailed(), loadingFailed -> assertEquals(loadingFailed.getErrorText(), "net::ERR_INTERNET_DISCONNECTED"));
         try {
             driver.get("https://www.google.com");
         } catch (WebDriverException exc) {
