@@ -90,6 +90,15 @@
         </dependency>
 
 
+        <!-- take full page screen shots  -->
+        <!-- doc https://github.com/pazone/ashot  -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+
+
         <!-- JavaScriptErrorReporter API 1.00v to maven repo  -->
         <!--<dependency>-->
         <!--<groupId>com.github.lkkushan101.JavaErrorReporting</groupId>-->
