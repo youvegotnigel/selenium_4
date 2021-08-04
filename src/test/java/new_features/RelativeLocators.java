@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import static org.openqa.selenium.support.locators.RelativeLocator.withTagName;
+import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
 public class RelativeLocators {
 
@@ -38,7 +38,7 @@ public class RelativeLocators {
         driver.get("https://app.testproject.io/");
         WebElement signInButton = driver.findElement(By.id("tp-sign-in"));
 
-        driver.findElement(withTagName("a").below(signInButton)).click();
+        driver.findElement(with(By.tagName("a")).below(signInButton)).click();
         String title = driver.findElement(By.id("tp-title")).getText();
         System.out.println("Title: " + title);
     }
@@ -48,7 +48,7 @@ public class RelativeLocators {
         driver.get("https://app.testproject.io/");
         WebElement signInButton = driver.findElement(By.id("tp-sign-in"));
         WebElement rememberMeCheckbox = driver.findElement(By.id("rememberMe"));
-        WebElement rememberMeText = driver.findElement(withTagName("span")
+        WebElement rememberMeText = driver.findElement(with(By.tagName("span"))
                 .above(signInButton)
                 .toRightOf(rememberMeCheckbox));
         System.out.println("Text = " + rememberMeText.getText());
@@ -57,7 +57,7 @@ public class RelativeLocators {
     @Test
     public void testRelativeLocator_FindListOfWebElements () {
         driver.get("https://addons.testproject.io/");
-        List<WebElement> allPlatforms = driver.findElements(RelativeLocator.withTagName("img")
+        List<WebElement> allPlatforms = driver.findElements(RelativeLocator.with(By.tagName("img"))
                 .toRightOf(By.id("q")));
 
         for (WebElement platform : allPlatforms) {

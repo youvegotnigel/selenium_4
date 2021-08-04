@@ -1,30 +1,34 @@
 package new_features;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v87.log.Log;
+
+import org.openqa.selenium.devtools.v91.log.Log;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class ViewConsoleLogs {
 
-    private ChromeDriver driver;
+    private WebDriver driver;
+    private DevTools devTools;
     //private String url = "https://www.lego.com/404";
-    private String url = "https://oneapp.ncinga.com/ba-app/#";
+    private String url = "https://qa.eshrewd.net/resilience/";
 
     @BeforeClass
     public void setUp () {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+
     }
 
     @Test
     public void viewConsoleLogs () {
         // Get The DevTools And Create A Session
-        DevTools devTools = driver.getDevTools();
+        devTools = ((ChromeDriver)this.driver).getDevTools();
         devTools.createSession();
 
         // Send A Command To Enable The Logs

@@ -5,15 +5,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v84.network.Network;
-import org.openqa.selenium.devtools.v84.network.model.ConnectionType;
+
+import org.openqa.selenium.devtools.v91.network.Network;
+import org.openqa.selenium.devtools.v91.network.model.ConnectionType;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.Optional;
 
-import static org.openqa.selenium.devtools.v87.network.Network.loadingFailed;
+import static org.openqa.selenium.devtools.v91.network.Network.loadingFailed;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class SlowNetworkTests {
