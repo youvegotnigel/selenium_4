@@ -15,7 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
-public class PageScreenshot {
+public class PageScreenshot{
 
     private WebDriver driver;
 

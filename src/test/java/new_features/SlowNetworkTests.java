@@ -17,7 +17,7 @@ import java.util.Optional;
 import static org.openqa.selenium.devtools.v91.network.Network.loadingFailed;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class SlowNetworkTests {
+public class SlowNetworkTests{
 
     private ChromeDriver driver;
     DevTools devTools;

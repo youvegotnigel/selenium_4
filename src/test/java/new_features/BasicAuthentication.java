@@ -17,7 +17,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
-public class BasicAuthentication {
+public class BasicAuthentication{
 
     private WebDriver driver;
     DevTools devTools;

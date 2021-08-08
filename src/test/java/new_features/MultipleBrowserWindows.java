@@ -11,7 +11,7 @@ import org.testng.asserts.SoftAssert;
 
 import java.util.Set;
 
-public class MultipleBrowserWindows {
+public class MultipleBrowserWindows{
 
     private WebDriver driver;
 
@@ -68,7 +68,6 @@ public class MultipleBrowserWindows {
         for (String handle1 : driver.getWindowHandles()) {
             System.out.println(handle1);
             driver.switchTo().window(handle1);
-
         }
 
         driver.switchTo().window(parentWindow);

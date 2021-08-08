@@ -22,7 +22,7 @@ import org.testng.annotations.Test;
  * @author: Serguei Kouzmine (kouzmine_serguei@yahoo.com)
  */
 
-public class LoggingDevToolsTest {
+public class LoggingDevToolsTest{
 
     private static boolean runHeadless = false;
     //private static String osName = Utils.getOSName();

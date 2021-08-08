@@ -14,7 +14,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GeoLocation {
+public class GeoLocation{
 
     private ChromeDriver driver;
 

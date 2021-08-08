@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 
 import static org.openqa.selenium.support.locators.RelativeLocator.with;
 
-public class RelativeLocators {
+public class RelativeLocators{
 
     private WebDriver driver;
 
