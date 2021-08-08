@@ -22,7 +22,6 @@ public class ViewConsoleLogs{
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-
     }
 
     @Test
@@ -43,6 +42,12 @@ public class ViewConsoleLogs{
             System.out.println("text = " + logEntry.getText());
             System.out.println("timestamp = " + logEntry.getTimestamp());
         });
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         // Load The AUT
         driver.get(url);
