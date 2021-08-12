@@ -15,7 +15,7 @@ public class ViewConsoleLogs{
     private WebDriver driver;
     private DevTools devTools;
     //private String url = "https://www.lego.com/404";
-    private String url = "https://qa.eshrewd.net/resilience/";
+    private String url = "https://www.saucedemo.com/";
 
     @BeforeClass
     public void setUp () {
@@ -44,7 +44,7 @@ public class ViewConsoleLogs{
         });
 
         try {
-            Thread.sleep(3000);
+            Thread.sleep(6000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
