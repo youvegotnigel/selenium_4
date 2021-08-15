@@ -17,19 +17,17 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.logging.Level;
 
-public class ViewConsoleLogsII {
+public class ViewConsoleLogsIII {
 
     private WebDriver driver;
 
-    private By input_email =By.xpath("//input[@placeholder='Email']");
-    private By input_password =By.xpath("//input[@placeholder='Password']");
-    private By btn_login =By.xpath("(//button[@type='submit'])[1]");
+    private By input_username =By.xpath("//input[@id='username']");
+    private By input_password =By.xpath("//input[@id='password']");
+    private By li_location = By.xpath("//li[@id='Laboratory']");
+    private By btn_login =By.xpath("//input[@id='loginButton']");
 
-    private By div_logged_user = By.xpath("//div[@class='author-bio']");
-    private By h4_logged_user = By.xpath("//h4/strong");
 
-    //private String url = "https://www.lego.com/404";
-    private String url = "https://www.phptravels.net/login";
+    private String url = "https://demo.openmrs.org/openmrs/login.htm";
 
     @BeforeClass
     public void setUp () {
@@ -47,29 +45,30 @@ public class ViewConsoleLogsII {
     public void login_with_valid_credentials () {
         // Load The AUT
         driver.get(url);
-        driver.findElement(input_email).sendKeys("user@phptravels.com");
-        driver.findElement(input_password).sendKeys("demouser");
+        driver.findElement(input_username).sendKeys("Admin");
+        driver.findElement(input_password).sendKeys("Admin123");
+        driver.findElement(li_location).click();
         driver.findElement(btn_login).click();
 
         System.out.println("\nConsole Logs for valid login");
         analyzeLog();
 
-        explicit_wait(div_logged_user);
-        Assert.assertEquals(driver.findElement(h4_logged_user).getText(),"Lionel");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://demo.openmrs.org/openmrs/referenceapplication/home.page");
     }
 
     @Test
     public void login_with_invalid_credentials () {
         // Load The AUT
         driver.get(url);
-        driver.findElement(input_email).sendKeys("user@phptravels.com");
+        driver.findElement(input_username).sendKeys("user@phptravels.com");
         driver.findElement(input_password).sendKeys("test123");
+        driver.findElement(li_location).click();
         driver.findElement(btn_login).click();
 
         System.out.println("\nConsole Logs for invalid login");
         analyzeLog();
 
-        Assert.assertEquals(driver.getCurrentUrl(),"https://www.phptravels.net/login/failed");
+        Assert.assertEquals(driver.getCurrentUrl(),"https://demo.openmrs.org/openmrs/referenceapplication/login.page");
     }
 
     public void analyzeLog() {
