@@ -8,3 +8,6 @@
 target
 test-output
 resources/test.properties
+
+# Screenshots
+src/test/java/headless_test/screenshots
