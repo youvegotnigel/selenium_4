@@ -14,7 +14,9 @@ import org.testng.annotations.Test;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.Optional;
 import java.util.Set;
@@ -54,6 +56,7 @@ public class ReportMCAP {
     @Test(priority = 1)
     public void print_content_headers() {
 
+        driver.navigate().to("https://www.seleniumhq.org/");
         devTools = driver.getDevTools();
         devTools.createSession();
         devTools.send(Network.enable(Optional.empty(), Optional.empty(), Optional.empty()));
@@ -73,6 +76,23 @@ public class ReportMCAP {
 
     }
 
+    @Test(priority = 1)
+    public void network_response(){
+
+        try {
+            HttpURLConnection cn= (HttpURLConnection)new URL(REPORT_URL).openConnection();
+
+            cn.setRequestMethod("HEAD");
+            cn.connect();
+
+            System.out.println("Http response code: " + cn.getResponseCode());
+            System.out.println("Http response Message: " + cn.getHeaderFields());
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Test(priority = 2)
     public void print_pdf_content(){
 
@@ -87,8 +107,7 @@ public class ReportMCAP {
             URL pdfUrl = new URL(pdf_url);
 
             InputStream is = pdfUrl.openStream();
-            //BufferedInputStream fileParse = new BufferedInputStream(is);
-            ByteArrayInputStream fileParse = new ByteArrayInputStream(is.readAllBytes());
+            BufferedInputStream fileParse = new BufferedInputStream(is);
 
             PDDocument pdfDocument = PDDocument.load(fileParse);
             pdf_content = new PDFTextStripper().getText(pdfDocument);
