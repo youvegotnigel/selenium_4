@@ -7,8 +7,8 @@ import org.junit.AfterClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v104.network.Network;
-import org.openqa.selenium.devtools.v104.network.model.Headers;
+import org.openqa.selenium.devtools.v108.network.Network;
+import org.openqa.selenium.devtools.v108.network.model.Headers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
