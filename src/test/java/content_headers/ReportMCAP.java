@@ -6,14 +6,13 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.devtools.DevTools;
-import org.openqa.selenium.devtools.v103.network.Network;
-import org.openqa.selenium.devtools.v103.network.model.Headers;
+import org.openqa.selenium.devtools.v108.network.Network;
+import org.openqa.selenium.devtools.v108.network.model.Headers;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
