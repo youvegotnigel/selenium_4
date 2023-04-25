@@ -100,7 +100,7 @@ public class MultipleBrowserWindows {
         // new browser window
         driver.switchTo().newWindow(WindowType.WINDOW);
         driver.get("https://www.gmail.com");
-        softAssert.assertEquals(driver.getTitle(), "Gmail - Email from Google");
+        softAssert.assertEquals(driver.getTitle(), "Gmail: Private and secure email at no cost | Google Workspace");
 
         // new browser window
         driver.switchTo().newWindow(WindowType.WINDOW);
@@ -110,7 +110,7 @@ public class MultipleBrowserWindows {
         // new tab in the same browser window
         driver.switchTo().newWindow(WindowType.TAB);
         driver.get("https://twitter.com/");
-        softAssert.assertEquals(driver.getTitle(), "Twitter. It’s what’s happening / Twitter");
+        softAssert.assertEquals(driver.getTitle(), "Twitter");
 
         softAssert.assertAll();
     }
