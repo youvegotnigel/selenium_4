@@ -44,7 +44,7 @@ public class MultipleBrowserWindows {
         driver.switchTo().newWindow(WindowType.TAB);
 
         driver.get("https://www.selenium.dev/");
-        softAssert.assertEquals(driver.getTitle(), "SeleniumHQ Browser Automation");
+        softAssert.assertEquals(driver.getTitle(), "Selenium");
 
         // new tab in the same browser window
         driver.switchTo().newWindow(WindowType.TAB);
@@ -58,7 +58,7 @@ public class MultipleBrowserWindows {
         driver.switchTo().newWindow(WindowType.TAB);
 
         driver.get("https://twitter.com/");
-        softAssert.assertEquals(driver.getTitle(), "Twitter. It’s what’s happening / Twitter");
+        softAssert.assertEquals(driver.getTitle(), "Explore / Twitter");
 
 
         //print out all window handles
